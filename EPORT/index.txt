@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive School Portfolio</title>
+
+<style>
+
+/* GLOBAL */
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Felix Titling;
+background:#281C59;
+color:white;
+text-align:center;
+}
+
+p{
+font-family:Consolas;
+color:white;
+}
+
+/* HEADER */
+
+.main-header{
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+padding:25px;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+.main-header h1{
+margin:0;
+font-size:32px;
+}
+
+.main-header p{
+margin-top:5px;
+opacity:0.9;
+}
+
+/* PAGE */
+
+.page{
+display:none;
+padding:40px 20px;
+animation:fade .6s;
+}
+
+.active{
+display:block;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* HOME LAYOUT */
+
+.home-flex{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.home-flex img{
+width:300px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* SECTIONS */
+
+.section{
+background:rgba(255,255,255,0.12);
+padding:25px;
+margin:25px auto;
+border-radius:20px;
+width:85%;
+backdrop-filter:blur(10px);
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.section:hover{
+transform:translateY(-5px);
+}
+
+/* BUTTONS */
+
+button{
+background:linear-gradient(45deg,#00f2fe);
+border:none;
+color:Navy;
+padding:12px 28px;
+margin:10px;
+font-family:Ink Free;
+font-size:16px;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 5px 12px rgba(0,0,0,0.3);
+}
+
+button:hover{
+transform:scale(1.05);
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+}
+
+/* MEDIA */
+
+.media{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.media img, video{
+width:200px;
+height:130px;
+border-radius:15px;
+object-fit:cover;
+box-shadow:0 5px 10px rgba(0,0,0,0.4);
+cursor:pointer;
+transition:.4s;
+}
+
+.media img:hover{
+transform:scale(1.1);
+}
+
+/* FOOTER NAVIGATION */
+
+.page-footer{
+margin-top:40px;
+padding:15px;
+background:#151030;
+border-top:2px solid rgba(255,255,255,0.2);
+}
+
+/* FLOATING EFFECT */
+
+.floating{
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:80%;
+max-height:80%;
+border-radius:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="main-header">
+<h1><i>welcomeee to my portfoliooo!</i></h1>
+<p>THE SCHOOL YEAR 2025 - 2026.</p>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="home-flex">
+    
+    <!-- TEXT + BUTTONS -->
+    <div class="home-text">
+      <h2>I <3 FAIRNESS!</h2>
+      <p><i>"And let us not grow weary of doing good, for in due season we will reap, if we do not give up."</i> - Galatians 6:9</p>
+      
+      <div class="home-buttons">
+        <button onclick="showPage('personal')">My Personal Space</button>
+        <button onclick="showPage('tle')">TLE-ICT</button>
+        <button onclick="showPage('ap')">AP</button>
+      </div>
+    </div>
+    
+    <!-- IMAGE -->
+    <div class="home-image">
+      <img src="self.jpeg">
+    </div>
+    
+  </div>
+</div>
+
+<style>
+/* FLEX CONTAINER */
+.home-flex {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* align vertically */
+  flex-wrap: wrap;
+  gap: 50px;               /* space between text and image */
+  margin-top: 40px;
+}
+
+/* TEXT SECTION */
+.home-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* buttons aligned left inside text column */
+  max-width: 400px;
+}
+
+/* BUTTONS */
+.home-buttons {
+  display: flex;
+  flex-direction: column; /* buttons stacked vertically */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* IMAGE */
+.home-image img {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+/* FLOATING ANIMATION (optional) */
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+</style>
+
+
+</div>
+
+<!-- PERSONAL -->
+
+<div id="personal" class="page">
+
+<h1>My Personal Space</h1>
+
+<div class="section">
+<h2>Personal Details</h2>
+<p>good day! my first name is Juan Laurenz but i usually go by renz. i was born on the 7th of July in the year 2011. currently, i am 14 years of age and crazily enjoying my teenage years with friends and family. some of my hobbies include watching TV—specifically animes and k-dramas, being on my phone, and participating in sports—such as basketball and volleyball. fun fact about me is that i love eatinggggg! </p>
+<div class="media">
+<img src="me1..jpeg">
+<img src="me2.jpeg">
+<video controls src="personal_video.mp4"></video>
+</div>
+</div>
+
+<div class="section">
+<h2>My Circle of Friends</h2>
+<p>throughout my stay at LPSci, it has come to my attention that real friends are gold. they're rare, they're worthy, and they're precious. these are my friends whom made going to school exciting. i would say that if i had no friends, i'd be studying all day and getting high scores but thanks to these weirdos—i actually enjoy studying but more on the fun side.
+<div class="media">
+<img src="cof1.jpeg">
+<img src="cof2.jpeg">
+<img src="cof3.jpeg">
+<img src="cof4.jpeg">
+<img src="cof5.jpeg">
+<img src="cof6.jpeg">
+<video controls src="friends_video.mp4"></video>
+</div>
+</div>
+
+<div class="section">
+<h2>My Family</h2>
+<p>my family is my inspiration to succeed in life. i see my parents' hard work so me and my siblings may study and i'm willing to pay them back for that. so i will study hard, find a stable job, and have them retire. my family supports me in all that i do. i, too, want to support them as they try to achieve their goals in life. i love my fammmmm so much!
+<div class="media">
+<img src="fam1.jpeg">
+<img src="fam2.jpeg">
+<video controls src="family_video.mp4"></video>
+</div>
+</div>
+
+<div class="page-footer">
+<button onclick="showPage('home')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- TLE -->
+
+<div id="tle" class="page">
+
+<h1>TLE-ICT</h1>
+
+<button onclick="showPage('tle2')">2nd Quarter</button>
+<button onclick="showPage('tle3')">3rd Quarter</button>
+<button onclick="showPage('tle4')">4th Quarter</button>
+
+<div class="page-footer">
+<button onclick="showPage('home')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- TLE 2 -->
+
+<div id="tle2" class="page">
+
+<h1>2nd Quarter</h1>
+
+<button onclick="showPage('tle2lessons')">Lessons</button>
+<button onclick="showPage('tle2activities')">Activities</button>
+
+<div class="page-footer">
+<button onclick="showPage('tle')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- TLE 2ND QUARTER -->
+
+<div id="tle2" class="page">
+
+<h1>2nd Quarter</h1>
+
+<button onclick="showPage('tle2lessons')">Lessons</button>
+<button onclick="showPage('tle2activities')">Activities</button>
+
+<div class="page-footer">
+<button onclick="showPage('tle')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- TLE 2ND QUARTER LESSONS -->
+
+<div id="tle2lessons" class="page">
+
+<h1>2nd Quarter Lessons</h1>
+
+<div class="section">
+<h3>Lesson 1</h3>
+<p>in the first lesson, we were introduced to css for the first time. we were enlightened on its meaning and why we should use css. also, ms. grace taught us about the layers of a webpage. she told us the 3 different layers: the content, presentation, and behavior layer and how they work and function together to make up a webpage. after learning about the layers one-by-one, we were finally enlightened on the benefits, capabilities, and advantages of using css in our work.</p>
+<div class="media">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 2</h3>
+<p>in the next lesson, ms. grace further explained css. she told us about its structure and how the selector, property, and value work together. and of course, the types of stylesheets werr introduced to us. after learning about the 3 types: embedded, internal, and external stylesheet, we were then taught how to code them and apply each. we were taught each step carefully, from using the style tag to creating a css file. everything was clear.</p>
+<div class="media">
+<img src="2_L2_1.jpg">
+<img src="2_L2_2.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 3</h3>
+<p>i would say lesson 3 was quite simple. again, the stylesheets were reviewed for further understanding. then the display property was made known to us. also, ms. grace taught us how the inline and block-level elements worked. lastly, we were taught of the div and span tag. it was explained to us that these tags do not have definite value and are used for sections.</p>
+<div class="media">
+<img src="2_L3_1.jpg">
+<img src="2_L3_2.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 4</h3>
+<p>lesson 4 was short. first, we were introduced to the css rule. it has 2 main parts: a selector and one or more style declarations. afterwards, it was explained to us how classes work and how they are denoted by a period (.). then to further expand our knowledge, ms. grace taught us about class selectors work. it is when an element and a selector was put together. this was to specify which element you want to style. lastly, we were introduced to the principle of grouping selectors. grouping selectors with the same style declaration makes things easier by avoiding repeating declarations, and making things more organized.</p>
+<div class="media">
+<img src="2_L4_1.jpg">
+<img src="2_L4_2.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 5</h3>
+<p>this lesson was pretty simple. css selectors are used to find or select the html elements you want to style. based on the lesson, there are 6 types: class selector, element selector, id selector, universal selector, attribute selector, and group selector. each selector is different from the others. and there are certain times and circumstances on when certain selectors are to be used. also, ms. grace showed us how the different selectors worked by coding them and seeing the output.</p>
+<div class="media">
+<img src="2_L5_1.jpg">
+<img src="2_L5_2.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 6</h3>
+<p>the last lesson, lesson 6, was all about setting dimensions and pseudo-classes, and links. css can be used to manage dimensions like the visibility and the width, and height of an html element on a webpage. as for the pseudo-classes, they have 4 types: link, visited, hover, and active. the link pseudo-class is for when the link is not visited yet. the visited pseudo-class is for when the link has been visited. the hover pseudo-class is for when the user is hovering the link. and the active pseudo-class is for when the user currently has the link opened. and that basically comprises the last lesson.
+</p>
+<div class="media">
+<img src="2_L6_1.jpg">
+<img src="2_L6_2.jpg">
+</div>
+</div>
+
+<div class="page-footer">
+<button onclick="showPage('tle2')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- TLE 2ND QUARTER ACTIVITIES -->
+
+<div id="tle2activities" class="page">
+
+<h1>2nd Quarter Activities</h1>
+
+<div class="section">
+<h3>Intramurals</h3>
+<p>the intramurals for s.y. '25 - '26 was really fun. from the look on everyone's faces, i could tell they were enjoying watching and participating in the games. one thing i've learned in this year's intramurals is that victory is achieved with teamwork. to become a victor is to become one with your teammates. i believe it's not possible to win team sports by yourself because you need each other to work things out. you must hear others' ideas and combine them with yours, to ultimately form a strategy to win. in this year, i would say that i actively participated in the games. i played basketball, volleyball, and substituted for a friend in the 4x100m dash which was very fun.</p>
+<div class="media">
+<img src="int1.jpeg">
+<img src="int2.jpeg">
+<video controls src="intramurals_video.mp4"></video>
+</div>
+</div>
+
+<div class="section">
+<h3>Science Month</h3>
+<p>based on the activities, i would say everyone had a great time during the science month. some joined the quiz bee, some took photos, some built a mini-garden, and some just spectated. all of these activities prepared by the science club brought joy to everyone especially, the wins corner project. the wins corner promoted proper hygiene for all. it featured the steps on handwashing and toothbrushing, making sure everyone was well-informed how to do it properly. the wins corner promoted teamwork among classmates. all the cardboard, colored paper, and paint used on each wins corner was used by everyone, each of us helped in making the wins corner to what it is now.</p>
+<div class="media">
+<img src="sci1.jpeg">
+<img src="sci2.jpeg">
+<video controls src="science_video.mp4"></video>
+</div>
+</div>
+
+<div class="section">
+<h3>Buwan ng Wika</h3>
+<p>buwan ng wika for everyone was fun. there was quiz bee for each grade level which brought intensity to all students. also, each grade level had a particular competition for representatives to compete. for grade 9, it was the declamation. i would say i actively participated because we had a classroom elimination and performance task to pick our representative who will compete with others. although not picked, i'm happy because our representative, gab, won the competition and achieved victory for the class. a thing i've learned in this year's buwan ng wika is that our language is important. despite our differences in culture and beliefs, the filipino language is one thing that keeps us united to work together.</p>
+<div class="media">
+<img src="bnw1.jpeg">
+<img src="bnw2.jpeg">
+<video controls src="buwan_video.mp4"></video>
+</div>
+</div>
+
+<div class="section">
+<h3>Teacher's Day</h3>
+<p>the teachers' day this year was the best. not only did we have our own fun celebrations at our classrooms but we also had a crying session. because of my classmates' heartfelt letters to our teachers, they couldn't help but cry seeing how much we value and appreciate our teachers' efforts to teach and help us. i've learned from our celebration that we, my classmates and i, together with our teachers, are the ones who will be together for the rest of the school year. so, as much as possible, we should think of each other as family and love each one. in fact, unity is what's really needed inside the classroom. loving one another while being united with one purpose: to study. let's not forget that it's the people were with that makes studying bearable and fun. they're what makes school worth waking up for.</p>
+<div class="media">
+<img src="tch1.jpeg">
+<img src="tch2.jpeg">
+<video controls src="teacher_video.mp4"></video>
+</div>
+</div>
+
+<div class="section">
+<h3>AP Month</h3>
+<p>lastly, the ap month. to be honest, not much happened yet since the opening ceremony. because of the frequent class suspension, i suppose the ap club couldn't push through with their other activities yet. but they're already done with the quiz bee. fun fact is i was supposed to be one of our representatives for the quiz bee. but i backed out late because i was sick for the whole week. another project during the ap month is the mana. it tackled the issues involving the west philippine sea and how we could protect it. due to the frequent suspensions, it's sad that other activities were moved to november. and this is all i can say about ap month.</p>
+<div class="media">
+<img src="ap1.jpeg">
+<img src="ap2.jpeg">
+<video controls src="ap_video.mp4"></video>
+</div>
+</div>
+
+<div class="page-footer">
+<button onclick="showPage('tle2')">⬅ Back</button>
+</div>
+
+</div>
+
+
+
+<!-- TLE 3RD QUARTER -->
+
+<div id="tle3" class="page">
+
+<h1>3rd Quarter</h1>
+
+<button onclick="showPage('tle3lessons')">Lessons</button>
+<button onclick="showPage('tle3activities')">Activities</button>
+
+<div class="page-footer">
+<button onclick="showPage('tle')">⬅ Back</button>
+</div>
+
+</div>
+
+
+<!-- TLE 3 LESSONS -->
+
+<div id="tle3lessons" class="page">
+
+<h1>3rd Quarter Lessons</h1>
+
+<div class="section">
+<h3>Lesson 1</h3>
+<p>in lesson 1, we were introduced to typography. we learned the different font-properties and text-properties.</p>
+<div class="media">
+<img src="3l11.png">
+<img src="3l12.png">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 2</h3>
+<p>in lesson 2, we learned about formatting text—such as creating bold and italic text, indenting text, changing line spacing and text alignment, changing color of text and many more.</p>
+<div class="media">
+<img src="3l21.png">
+<img src="3l22.png">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 3</h3>
+<p>lesson 3 is all about formatting layout with css wherein terms like the box model, element positioning, offset, float, wrapping text around an image, and others were discussed and explained.
+<div class="media">
+<img src="3l31.png">
+<img src="3l32.png">
+</div>
+</div>
+
+</div>
+
+<div class="page-footer">
+<button onclick="showPage('tle3')">⬅ Back</button>
+</div>
+
+</div>
+
+<div id="tle3activities" class="page">
+
+<h1>3rd Quarter Activities</h1>
+
+<div class="section">
+<h3>Cluster Meet</h3>
+<p>this year’s cluster meet was sooooo fun for me because i was able to participate in it—with my friends. having substituted for a friend in the intrams, an opportunity opened itself for me and i became part of the athletics team that competed with other schools this year. i actually placed 3rd in the 400m dash category and was very happy to get an awarddd.
+</p>
+<div class="media">
+<img src="cl1.jpeg">
+<img src="cl2.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>English Month</h3>
+<p>the english month’s highlight, for me, is the door book cover contest. to many us, it was more than a contest. it was an opporunity to know each other better. working together, exerting our mixed efforts for one goal made us connect.</p>
+<div class="media">
+<img src="eng1.jpeg">
+<img src="eng2.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Values Month</h3>
+<p>the values month really never fails to touch the hearts of many. the MVP contest showed each candidates’ personalities. they were judged if they were meant for the title, and surely, the winners weree—congrats to gracee! also, the VPOP competition is a journey i’ll never forget. aside from singing and dancing, connecting with classmates will never disappear during these section works. our class isn’t perfect but i belive ours is the best. no, not in section works or contests, not in schoolworks but in creating memories together.</p>
+<div class="media">
+<img src="vpop1.jpeg">
+<img src="vpop2.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Math Month</h3>
+<p>during the math month, i was given a chance to showcase my skills in front of many. i was the guitarist of our section band that joined the math idol competition. along the way, we made memories that i’ll never forget—jamming inside the studio, trying out other instruments, and talking about life. truly, our band deserved to be called “best band”—congrats to us and our orig song, “Betting on Me”.</p>
+<div class="media">
+<img src="math1.jpeg">
+<img src="math2.jpeg">
+</div>
+</div>
+
+<div class="page-footer">
+<button onclick="showPage('tle3')">⬅ Back</button>
+</div>
+
+</div>
+
+
+<!-- TLE 4TH QUARTER -->
+
+<div id="tle4" class="page">
+
+<h1>4th Quarter</h1>
+
+<button onclick="showPage('tle4lessons')">Lessons</button>
+<button onclick="showPage('tle4activities')">Activities</button>
+
+<div class="page-footer">
+<button onclick="showPage('tle')">⬅ Back</button>
+</div>
+
+</div>
+
+
+<!-- TLE 4 LESSONS -->
+
+<div id="tle4lessons" class="page">
+
+<h1>4th Quarter Lessons</h1>
+
+<div class="section">
+<h3>Lesson 1</h3>
+<p>lesson just mostly talked about JavaScript generally at the beginning but dived deeper into what JavaScrip is really capabale of.</p>
+</div>
+
+<div class="section">
+<p>lesson 2 then talked about how JavaScript really functions in your coding. it explored externall JavaScript and the guidelines.</p>
+</div>
+
+<div class="section">
+<h3>Lesson 3</h3>
+<p>lesson 3 discussed about the characteristics of JavaScript and a way to easily understandd it. it also introduced the commonly used properties.</p>
+</div>
+
+
+<div class="section">
+<h3>Lesson 4</h3>
+<p>lesson 4 really explored the deeper version of JavaScript by introducing events. in this lesson, we can see the table of event triggers. this lesson also showed how popup boxes work and etc.</p>
+</div>
+
+
+
+<div class="page-footer">
+<button onclick="showPage('tle4')">⬅ Back</button>
+</div>
+
+</div>
+
+
+<div id="tle4activities" class="page">
+
+<h1>4th Quarter Activities</h1>
+
+<div class="section">
+<h3>Folk Dance</h3>
+<p>i was part of the group that represented grade 9 in this year’s folk dance competition. though we only placed 3rd out of 5 competitors, i really am proud of what we achieved. all our work really paid off. and ultimately, i made new friends.</p>
+<div class="media">
+<img src="fd1.jpeg">
+<img src="fd2.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Battle of the Bands</h3>
+<p>even though i wasn’t there to watch the BOTB, i’m sure my fellow grade 9 batchmates performed really well acknowledging the fact that “Padayon” won as Champions, and “Umasaginip” as 3rd runners-up! i was only able to watch videos and clips taken by others and they really deserved those awards.</p>
+<div class="media">
+<img src="botb1.jpeg">
+<img src="botb2.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Fire Prevention Month</h3>
+<p>in this year’s fire prevention month, i will be part of the group that will represent LPSCI at the BFP Hataw Kabataan Contest-Interpretative Dance. although we only started our practice today, i’m sure that our team composed of brilliant students from grades 7 - 10 will find a way to bring glory to school.
+</p>
+<div class="media">
+<img src="fpv1.jpeg">
+<img src="fpv2.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Noli Me Tangere</h3>
+<p>Watch our musical performance here:<p>
+<a href="https://www.youtube.com/watch?v=Z8vosFU6Jo4">IBARRA: HIMIG NG HIMAGSIKAN</a>
+</div>
+
+
+<div class="page-footer">
+<button onclick="showPage('tle4')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- AP -->
+
+<div id="ap" class="page">
+
+<h1>Araling Panlipunan</h1>
+
+<button onclick="showPage('ap2')">2nd Quarter</button>
+<button onclick="showPage('ap4')">4th Quarter</button>
+
+<div class="page-footer">
+<button onclick="showPage('home')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- AP 2ND QUARTER -->
+
+<div id="ap2" class="page">
+
+<h1>AP 2nd Quarter Lessons</h1>
+
+<div class="section">
+<h3>Lesson 1</h3>
+<p>Kahulugan ng Demand Ang demand ay tumutukoy sa kakayahan at kagustuhan ng mamimili na bumili ng produkto o serbisyo sa isang takdang presyo at panahon. Hindi lahat ng gusto ay demand – dapat ay may kakayahang bumili (purchasing power).
+Formula: Demand = KAGUSTUHAN + KAKAYAHAN
+
+Market Demand Individual Demand: demand ng isang mamimili
+Market Demand: pinagsama-samang demand ng lahat ng mamimili sa pamilihan
+Demand Function Ipinapakita ang relasyon ng presyo (P) at dami ng demand (Qd) sa pamamagitan ng ekwasyon:
+Qd = a − bP
+Kung saan:
+Qd = dami ng demand
+a = pinakamataas na demand kung libre ang presyo
+b = slope o pagbabago sa demand sa bawat pagbabago ng presyo
+P = presyo
+Halimbawa: Qd = 100 − 5P. Kung P = ₱10 → Qd = 50.
+
+Batas ng Demand
+Kapag tumaas ang presyo, bumababa ang dami ng demand; kapag bumaba ang presyo, tumataas ang dami ng demand (ceteris paribus). Magkasalungat ang relasyon ng presyo at demand.
+
+Pagbabago sa Dami ng Demand (Movement Along the Curve)
+Nangyayari kapag presyo lamang ang nagbago.
+- Pagtaas sa Dami ng Demand → kapag bumaba ang presyo
+- Pagbaba sa Dami ng Demand ↓ kapag tumaas ang presyo
+
+Pagbabago sa Demand (Shift of the Curve)
+- Pagtaas ng Demand (Shift Right) → tumaas ang kita, dumami ang mamimili, tumaas ang popularidad, bumaba ang presyo ng complementary goods, tumaas ang presyo ng substitute goods
+- Pagbaba ng Demand (Shift Left) ← bumaba ang kita, nabawasan ang mamimili, nawala sa uso, tumaas ang presyo ng complementary goods, bumaba ang presyo ng substitute goods
+
+Elastisidad ng Demand (Price Elasticity of Demand – EP/PED)
+Sukat kung gaano kasensitibo ang mamimili sa pagbabago ng presyo.
+
+Formula (Midpoint / Arc Method):
+EP = [(Q2 − Q1) / ((Q1 + Q2) / 2)] ÷ [(P2 − P1) / ((P1 + P2) / 2)]</p>
+<div class="media">
+<img src="APL11.jpg">
+<img src="APL12.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 2</h3>
+<p>Lesson 2 – Supply Kahulugan ng Supply
+Ang supply ay tumutukoy sa dami ng produkto o serbisyo na handang ipagbili ng mga prodyuser sa isang takdang presyo at panahon.
+
+Batas ng Supply (Law of Supply)
+Kapag tumaas ang presyo, tataas ang dami ng supply → kapag bumaba ang presyo, bababa ang dami ng supply (ceteris paribus). Direktang relasyon ang presyo at supply.
+
+Supply Schedule at Supply Curve
+- Supply Schedule – talaan ng dami ng produkto na handang ipagbili sa bawat presyo.
+- Supply Curve – grapikong representasyon ng supply schedule; pataas ang kurba dahil tumataas ang supply kapag tumataas ang presyo.
+
+Pagtaas ng Supply
+- Nangyayari kapag ibang salik bukod sa presyo ay nagdulot ng pagtaas ng dami ng supply.
+- Lumilipat ang buong kurba ng supply pakanan →
+- Halimbawa: Pagtaas ng teknolohiya, pagbaba ng presyo ng hilaw na materyales, pagdami ng prodyuser.
+
+Pagbaba ng Supply
+- Nangyayari kapag ibang salik bukod sa presyo ay nagdulot ng pagbaba ng dami ng supply.
+- Lumilipat ang kurba ng supply pakaliwa ←
+- Halimbawa: Pagtaas ng gastos sa produksiyon, kakulangan sa hilaw na materyales, kalamidad.
+
+Paggalaw sa Iisang Kurba ng Supply
+- Nangyayari kapag nagbago ang presyo lamang ng produkto.
+- Pagtaas ng quantity supplied ↑ paggalaw pataas sa kurba.
+- Pagbaba ng quantity supplied ↓ paggalaw pababa sa kurba.
+
+Elastisidad ng Supply (Price Elasticity of Supply – EP/Es)
+Sukat kung gaano kasensitibo ang dami ng supply sa pagbabago ng presyo.
+
+Formula (Midpoint / Arc Method):
+Es = [(Q2 − Q1) / ((Q1 + Q2) / 2)] ÷ [(P2 − P1) / ((P1 + P2) / 2)]
+
+Q1 = dating dami supplied
+Q2 = bagong dami supplied
+P1 = dating presyo
+P2 = bagong presyo</p>
+<div class="media">
+<img src="APL21.jpg">
+<img src="APL22.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 3</h3>
+<p>MGA URI NG ELASTISIDAD
+1.Elastic (> 1)
+Kahulugan: Mas malaki ang naging bahagdan ng pagtugon ng QD (quantity demanded) kaysa sa bahagdan ng pagbabago sa presyo.
+
+2.Inelastic (< 1)
+Kahulugan: Mas maliit ang naging bahagdan ng pagbabago ng QD kaysa sa bahagdan ng pagbabago sa presyo.
+
+3.Unitary (= 1)
+Kahulugan: Pareho ang bahagdan ng pagbabago. Tapat o pantay ang pagbabago ng presyo at quantity demanded.
+
+4.Perfectly Elastic (∞)
+Kahulugan: Anumang pagbabago sa presyo ay magdudulot ng walang hanggan (infinite) na pagbabago sa quantity demanded.
+
+5.Perfectly Inelastic (0)
+Kahulugan: Ang quantity demanded ay hindi tumutugon sa anumang pagbabago ng presyo.
+
+PRICE ELASTICITY NG SUPPLY
+Paraan na ginagamit upang masukat ang magiging pagtugon ng quantity supplied ng mga prodyuser sa tuwing may pagbabago sa presyo nito.
+
+FORMULA NG PRICE ELASTICITY OF DEMAND (PED)
+Ed = (% Pagbabago sa Quantity Demanded) ÷ (% Pagbabago sa Presyo)
+
+Ang ibig sabihin nito ay sinusukat ng elasticity kung gaano kalaki ang pagtugon ng mga mamimili sa pagbabago ng presyo ng isang produkto.
+
+Paano kalkulahin ang % Pagbabago
+% Pagbabago sa Quantity Demanded — ibabawas ang lumang quantity demanded mula sa bagong quantity demanded, hahatiin sa lumang quantity demanded, at imumultiply sa 100.
+
+% Pagbabago sa Presyo — ibabawas ang lumang presyo mula sa bagong presyo, hahatiin sa lumang presyo, at imumultiply sa 100.
+
+Kapag nakuha na ang dalawang porsyento, hahatiin ang pagbabago sa quantity demanded sa pagbabago sa presyo. Ang magiging sagot ay ang elasticity coefficient na nagsasabi kung ang produkto ay elastic, inelastic, o unitary.
+
+Interpretasyon: Kung ang resulta ay higit sa 1, ang demand ay elastic. Kung mas mababa sa 1, ito ay inelastic. Kung eksaktong 1, unitary.</p>
+<div class="media">
+<img src="APL31.jpg">
+<img src="APL32.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 4</h3>
+<p>Kahulugan ng Market Equilibrium
+Ang market equilibrium ay ang punto kung saan ang dami ng demand at dami ng supply ay magkapantay sa isang takdang presyo. Dito, walang labis o kakulangan sa pamilihan.
+
+Equilibrium Price at Quantity
+- Equilibrium Price (Pe) → presyo kung saan nagtatagpo ang demand at supply.
+- Equilibrium Quantity (Qe) → dami na binibili at binebenta sa equilibrium price.
+
+Paano Nakukuha ang Equilibrium
+1. Pagsamahin ang demand at supply schedules o curves.
+2. Hanapin ang presyo kung saan Qd = Qs.
+3. Presyo kung saan nagkakatugma ang demand at supply → Pe.
+4. Dami sa puntong iyon → Qe.
+
+Surplus at Shortage
+- Surplus (Excess Supply) → kapag P > Pe, dami ng supply > dami ng demand.
+Solusyon: Bumababa ang presyo → bababa ang supply at tataas ang demand hanggang maabot ang Pe.
+- Shortage (Excess Demand) → kapag P < Pe, dami ng demand > dami ng supply.
+Solusyon: Tumaas ang presyo → bababa ang demand at tataas ang supply hanggang maabot ang Pe.
+
+Pagbabago sa Equilibrium
+- Shift ng Demand Curve → nagdudulot ng pagbabago sa Pe at Qe.
+- Pagtaas ng Demand → Pe → Qe tumataas
+- Pagbaba ng Demand → Pe → Qe bumababa
+- Shift ng Supply Curve → nagdudulot ng pagbabago sa Pe at Qe.
+- Pagtaas ng Supply → Pe bumababa, Qe tumataas
+- Pagbaba ng Supply → Pe tumataas, Qe bumababa</p>
+<div class="media">
+<img src="APL41.jpg">
+<img src="APL42.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 5</h3>
+<p>Kahulugan
+Ang estraktura ng pamilihan ay tumutukoy sa uri at katangian ng kompetisyon sa pagitan ng mga prodyuser sa pamilihan.
+
+3 ELEMENTO NG ISANG PAMILIHAN
+1.Mamimili
+2.Prodyuser/negosyante
+3.Produkto
+
+PAGKAKAIBA NG MGA ANYO / URI NG PAMILIHAN
+1.Bilang at laki ng prodyuser o konsyumer
+2.Uri ng produkto o serbisyo
+3.Kontrol sa pagpasok sa pamilihan
+4.Kontrol sa presyo
+5.Paggamit ng di-presyong kompetisyon
+
+URI NG PAMILIHAN
+Lokal / Panrehiyon / Pambansa / Pandaigdigan
+
+GANAP NA KOMPETISYON
+Maraming konsyumer at prodyuser sa industriya
+Ang mga produkto ng mga kalakalan sa industriya ay magkakatulad
+Ang mga kalakalan sa industriya ay tinatawag na price takers
+Malayang nakapapasok at nakalalabas ang mga kalakalan sa produksyon
+Walang kontrol sa presyo
+Ginagamit sa ganitong pamilihan: Isang estruktura ng pampamilihan na kung saan ang indibidwal na kalakalan ay walang malakas na kontrol sa presyo (price taker).
+
+DI-GANAP NA KOMPETISYON
+Sa di-ganap na kompetisyon makikita ang iba't ibang anyo ng pamilihan kung saan may kontrol o impluwensiya ang ilan sa presyo o produkto.
+
+MONOPOLYO
+Iisa ang prodyuser
+Ang produkto ay walang malapit na kapalit
+Ang monopolista — price maker ng produkto
+Napakahirap ang pagpasok ng mga bagong prodyuser sa ganitong pamilihan
+Ang pag-aanunsyo sa produkto ay maaaring gamitin o hindi
+
+OLIGOPOLY
+Kakaunti lamang ang mga prodyuser sa industriya. Ang mga produkto ay maaaring magkakatulad o magkakaiba. Malaki ang kontrol ng mga kalakalan pagdating sa presyo.
+Mahirap ang papasok ng mga bagong prodyuser. Gumagastos ng malaki ang mga kalakalan sa pag-aanunsyo, pananaliksik, at pag-unlad.
+
+MONOPOLISTIC COMPETITION
+May katamtamang dami ng mga prodyuser at konsyumer. Ang mga industriya ay agresibong nakikipagkompetensya sa isa’t isa. Mayroong malawakang pag-aanunsyo.
+May kaunting control sa presyo dahil sa pagkakaiba-iba ng produkto. Madali ang pagpasok ng mga bagong prodyuser kung ikukumpara sa monopoly at oligopoly.
+
+MONOPSONY
+Mayroon lamang iisang konsyumer ngunit maraming prodyuser ng produkto at serbisyo.
+May kapangyarihan ang konsyumer na maimpluwensiyahan ang presyo sa pamilihan.</p>
+<div class="media">
+<img src="APL51.jpg">
+<img src="APL52.jpg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 6</h3>
+<p>Kahalagahan ng Pamahalaan sa Ekonomiya
+- Pamahalaan ay tumutulong sa pagpapanatili ng kaayusan sa pamilihan
+- Nagbibigay proteksyon sa mamimili at prodyuser
+- Nagpapatupad ng regulasyon upang maiwasan ang monopolisasyon at labis na kompetisyon
+
+Mga Bahagi ng Pamahalaan
+1. Pagbibigay ng Buwis (Taxes)
+- Pinagkukunan ng pondo para sa pampublikong serbisyo
+- Nakakaapekto sa presyo at demand ng produkto
+
+2. Pagbibigay ng Subsidy
+- Pinapababa ang gastos ng prodyuser upang mas maraming supply
+- Halimbawa: subsidy sa bigas, kuryente, edukasyon
+
+3. Pagkontrol sa Presyo (Price Control)
+- Price Ceiling → pinakamataas na presyo (hal. gamot)
+- Price Floor → pinakamababang presyo (hal. minimum wage)
+
+4. Regulasyon sa Kalikasan at Kaligtasan
+- Environmental regulations, labor laws
+- Tinitiyak ang kaligtasan at sustainability
+
+5. Pagbibigay ng Pampublikong Kalakal at Serbisyo
+- Halimbawa: kalsada, paaralan, ospital, kuryente
+
+6. Pagpapatupad ng Patakaran sa Kalakalan
+- Tariffs, import/export regulations
+- Proteksyon sa lokal na industriya at ekonomiya</p>
+<div class="media">
+<img src="APL61.jpg">
+<img src="APL62.jpg">
+</div>
+</div>
+
+<div class="page-footer">
+<button onclick="showPage('ap')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- AP 4TH QUARTER -->
+
+<div id="ap4" class="page">
+
+<h1>AP 4th Quarter Lessons</h1>
+
+<div class="section">
+<h3>Lesson 1</h3>
+<p>Yugto ng pamumuhay ng tao:
+
+Pangangaso at pangingisda
+Pagpapastol
+Pagtatanim
+Handicraft
+Panahong Industriyal
+
+BANSANG PANGKAUNLARAN
+
+-Kailangan ng mahabang panahon
+
+-Estado ng bansa kung saan tinatamasa ng mga tao mula sa pinakamababang uri ng mamamayan ang nakakamanghang pagbabago sa ekonomiya at pamumuhay.
+
+
+MGA KONSEPTO NG PAMBANSANG PANGKAUNLARAN
+
+Pagbabago
+-Paraan upang maging iba o naiiba.
+
+
+Pag-unlad (Positive change and development-nararamdaman)
+-Pagbabago mula sa mababa tungo sa mataas na antas ng pamumuhay.
+
+-Pag angat, pagsulong, o paglago ng pangkalahatang aspeto ng buhay. (Bon at Bon)
+
+-Isang progresibo at aktibong proseso at ang produkto nito ay ang pagsulong (Fajardo)
+
+-Ang kaunlaran ay matatamo lamang kung mapauunlad ang yaman ng buhay kaysa sa yaman ng ekonomiya. (Amartya Sen)
+
+ADDITIONAL:
+
+-Ayon pa rin kay Fajardo ang pagsulong ay nakikita at nasusukat.
+
+-Ang kaunlaran ay matatamo kung bibigyang pansin ang pagtanggal sa mga ugat ng kawalang kalayaan tulad ng kahirapan, diskriminasyon, at iba pa.
+
+
+Pagsulong (nakikita)
+-Pagusad tungo sa layunin.
+
+-Pagpapaunlad ng kakayahan, kaalaman, at abilidad upang makasabay sa agos ng buhay.
+
+-Sa pana-panahon, naiiba ang sitwasyon at kalagayan kaya naman ang pagsulong ay kailangan upang makasabay sa agos ng buhay.
+
+-Ayon sa United Nations Conference on Trade and Development (2012) ay mas malaki ang bilang ng dayuhang mamumuhunan sa papaunlad na bansa kaysa sa maunlad na bansa.
+
+
+Ebolusyon (Kailangan ng mahabang proseso)
+-Pagbabago sa mga katangian sa loob ng mahabang panahon
+
+-Anuman ang unang dumating ay mas mabuti sa sinundang panahon.
+
+
+DALAWANG MAGKAIBANG KONSEPTO NG PAG-UNLAD (TODARO AT SMITH, 2012)
+
+
+TRADISYUNAL
+
+
+-Binibigyang diin ang pag unlad bilang pagtatamo ng patuloy na pagtaas ng antas ng income per capita nang sa gayon ay mabilis na maparami ng bansa ang output kaysa sa bilis ng paglaki ng populasyon nito.
+
+MAKABAGO
+
+
+-Ang pag unlad ay dapat na kumakatawan sa malawakang pagbabago sa buong sistemang panlipunan. Dapat na ituon ang pansin sa iba’t ibang pangangailangan at nagbabagong hangarin ng mga tao at grupo ng nasabing sistema.
+
+
+SALIK SA PAGSULONG NG EKONOMIYA
+
+Likas na yaman
+Yamang tao
+Kapital
+Teknolohiya at Inobasyon
+
+HDI (HUMAN DEVELOPMENT INDEX)
+
+-Pangkalahatang sukat ng kakayahan ng bansa na matugunan ang mahahalagang aspekto ng kaunlarang pantao: kalusugan, edukasyon, etc.
+
+
+MAHBUB UL HAQ (Father of HDI)
+
+-Akses sa edukasyon
+
+-Maayos na serbisyong pangkalusugan
+
+-Mas matatag na kabuhayan
+
+-Kawalan ng karahasan at krimen
+
+-Kasiya-siyang mga libangan
+
+-Kalayaang pampulitika at pangkultura
+
+-Pakikilahok sa mga gawaing panlipunan
+
+
+
+MGA PALATANDAAN NG PAG-UNLAD:
+
+Makatwiran at dinamikong kaayusan ng panlipunan
+Kasaganaan at kasarinlan
+Kalayaan sa kahirapan, hanapbuhay para sa lahat, umaangat na istandard ng pamumuhay, at mainam na uri ng buhay para sa lahat
+Sapat na mga lingkurang panlipunan
+Katarungang panlipunan</p>
+<div class="media">
+<img src="apl11.jpeg">
+<img src="apl12.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 2</h3>
+<p>MGA KATANGIAN NG ISANG MAG AARAL
+● Makadiyos
+● Mapamaraan
+● Magalang
+● Masipag
+● Masunurin
+● Respeto
+● Tapat
+● Matulungin
+MGA GAMPANIN NG MAMAMAYAN SA PAG UNLAD NG
+BANSA:
+1. MAPANAGUTAN
+-Tamang pagbabayad ng buwis
+-Makialam
+2. MAABILIDAD
+-Bumuo o sumali sa kooperatiba
+-Pagnenegosyo
+3. MAALAM
+-Tamang pagboto
+-Pagpapatupad at pakikilahok sa mga proyektong pangkaunlaran sa komunidad
+4. MAKABANSA
+-Pakikilahok sa pamamahala ng bansa (participative governance)
+-Pagtangkilik sa mga produktong Pilipino
+
+ADDITIONAL! 👀
+MGA TUNGKULIN SA PAG UNLAD NG BANSA:
+Suportahan ang ating pamahalaan.
+-Sundin at igalang ang batas.
+-Alagaan ang ating kapaligiran.
+-Tumulong sa pagpuksa sa korapsyon at katiwalian sa pamahalaan.
+-Maging produktibo.
+-Tangkilikin ang mga produktong Pilipino.
+-Magtipid ng enerhiya.
+-Makilahok sa mga gawaing pansibiko.</p>
+<div class="media">
+<img src="apl21.jpeg">
+<img src="apl22.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 3</h3>
+<p>AGRIKULTURA
+-Isang agham at sining na may kinalaman sa pagpaparami ng mga hayop at mga
+tanim o halaman.
+-Ito ay may kaugnayan sa lahat ng gawain na sangkot ang mga hayop at halaman
+AGER=Lupa; CULTURA=Paglilinang
+MGA GAWAIN SA SEKTOR NG AGRIKULTURA:
+● Pagsasaka
+● Pangingisda
+● Panghahayupan
+● Paggugubat/Pagtrotroso
+ADDITIONAL🐝:
+LIVESTOCK-Hayop na may 4 na paa
+POULTRY-Mga ibon (kasama rin ang rabbit!)
+
+GAMPANIN NG PAGSASAKA:
+-Pangunahing pananim: palay, mais, niyog, tubo, saging, pinya, kape, mangga, tabako,
+at abaka na karaniwang kinokonsumo sa loob at labas ng bansa.
+-Tinatayang umabot ng ₱797.731 bilyon ang kabuuang kita mula sa pagsasaka.
+GAMPANIN NG PANGHAHAYUPAN:
+-May kinalaman sa mga hayop na itinaas para sa karne, hibla, gatas, itlog,
+atbp.
+Kasama rito ang pang-araw-araw na pangangalaga, pumipili ng pag-aanak
+at pagpapalaki ng mga hayop.
+GAMPANIN NG PANGINGISDA:
+-Nauuri sa tatlo: komersiyal(malalaking isda), munisipal(pampang), at
+aquaculture(scientific fishing)
+-Bahagi din nito ay ang panghuhuli ng hipon, sugpo, at pag aalaga ng mga
+damong dagat na ginagamit sa paggawa ng gulaman.
+GAMPANIN NG PAGGUGUBAT:
+-Patuloy na nililinang ang ating mga kagubatan bagamat tayo ay
+nahaharap sa suliranin ng pagkaubos ng mga yaman nito
+-Pinagkukunan ng: plywood, tabla, troso, at veneer
+-Pinagkakakitaan din ang rattan, nipa, anahaw, kawayan, pulot-pukyutan, at
+dagta ng almaciga.
+KAHALAGAHAN NG AGRIKULTURA:
+1. Pinagmumulan ng pagkain
+2. Pinagkukunan ng hilaw na materyales upang makabuo ng panibagong
+produkto
+3. Nagkakaloob ng trabaho sa maraming Pilipino
+4. Nagpapasok ng dolyar sa ating bansa
+5. Pinagkukunan ng sobrang manggagawa patungo sa ibang sektor ng
+ekonomiya
+MGA SULIRANIN:
+PAGSASAKA:
+● pagliit ng lupang sakahan
+● paggamit ng makabagong
+teknolohiya
+● kakulangan ng mga pasilidad
+at imprastraktura sa
+kabukiran
+● kakulangan ng suporta mula
+sa iba pang sektor
+● pagbibigay prayoridad sa
+sektor ng industriya,
+pagdagsa ng dayuhang
+kalakal
+● Climate Change
+PANGINGISDA:
+● mapanirang operasyon ng
+malalaking komersiyal na
+mangingisda
+● epekto ng polusyon sa
+pangisdaan
+● lumalaking populasyon ng
+bansa
+● kahirapan sa hanay ng mga
+mangingisda
+PAGHAHAYUPAN:
+● pagkakaroon ng mga peste
+sa alagang hayop tulad ng
+baboy at manok
+PAGGUGUBAT:
+● mabilis na pagkaubos ng
+mga likas na yaman
+MGA PATAKARAN AT PROGRAMA HINGGIL SA
+PAGPAPAUNLAD SA SEKTOR NG AGRIKULTURA:
+● PANAHON NA HINDI PA NASASAKOP ANG PILIPINAS
+- Ang mga sinaunang Pilipino ay nakakapag-may-ari ng lupa sa pamamagitan ng
+pagiging unang nagtayo ng bahay.
+- Wala pang titulo/rights noon.
+- Ang pinagbabasehan lamang ay salita ng bawat isa.
+
+● PANAHON NG KASTILA
+- Encomienda System: lupang gantimpala sa matapat na naglilingkod sa hari ng
+Espanya at mga taong tumulong sa pananakop sa Pilipinas.
+● PANAHON NG AMERIKANO
+- Binili ng Amerika ang 160,000 hectares ng lupa mula sa mga prayle para sa mga
+magsasaka.
+- Land Registration Act ng 1902:
+○ Nagkaroon ng mga titulo dahil dito.
+○ Ito ay sistemang Torrens, kung saan ang mga titulo ng lupa ay ipinatalang lahat.
+- Public Land Act ng 1902: Pamamahagi ng mga lupaing pampubliko sa mga pamilya na
+nagbubungkal ng lupa
+● PANAHON NG KASARINLAN
+- Batas Republika Blg. 1160 ng 1954: Nagtatag sa National Resettlement and
+Rehabilitation Administration (NARRA)
+- Batas Republika Blg. 1190 ng 1954:
+○ Bilang proteksyon laban sa mapang-abuso na may-ari ng lupa sa mga
+manggagawa.
+○ Ito ay laban sa mga Absentee Landlord
+- Agricultural Land Reform Code of 1963:
+○ Nagpalaya sa mabigat na trabaho ng magsasaka mula sa kanilang pagkaalipin
+sa utang at kahirapan.
+○ Nilagdaan ni Diosdado Macapagal noong Agosto 8, 1963
+- Atas ng Pangulo Blg. 2 ng 1972: Isailalim sa reporma sa lupa ang buong Pilipinas noong
+panahon ni Pangulong Marcos
+- Atas ng Pangulo Blg. 27: Bibilhin ng pamahalaan ang mga lupang sakahan na taniman
+ng palay/mais na lampas sa 7 ektaryang limitasyon at ipamamahagi ito sa mga
+magsasakang walang lupa.
+- Batas Republika Blg. 6657 ng 1988:
+○ “Comprehensive Agrarian Reform Law (CARL)” na inaprubahan ni Corazon
+Aquino noong Hunyo 10, 1988
+○ Kabilang dito ang lahat ng publiko at pribadong lupang agrikultural at nakapaloob
+sa Comprehensive Agrarian Reform Program (CARP)
+○ Ipinamamahagi ang lahat ng lupang agrikultural anuman ang tanim nito sa mga
+walang lupang magsasaka.
+○ Matatapos sana sa 10 taon ngunit ginagawa pa rin ang batas ha
+
+
+MGA NAISAKATUPARAN UPANG
+MAIANGAT ANG KALAGAYANG
+PANGKABUHAYAN NG MGA
+MAGSASAKA (CARP, 2003)
+1. Pagtatayo ng bahay-ugnayan
+(bagsakan) para sa mga magsasaka
+upang masigurong mayroon
+suportang maibigay sa kanila.
+2. Pagtatayo ng gulayan para sa mga
+magsasaka.
+3. Pagsisiguro na ang mga anak ng
+mga magsasaka ay makapag-aral
+kaya itinayo ang Pangulong
+Diosdado Macapagal Agrarian
+Reform Scholarship Program
+4. Kalahi agrarian reform zones
+
+BATAS REPUBLIKA BLG. 6657 NG 1988
+HINDI SAKOP NG CARP ANG:
+● Liwasan at
+parke
+● Mga gubat at
+reforestation
+area
+● Mga palaisdaan
+● Tanggulang
+pambansa
+● Paaralan
+● Simbahan
+● Sementeryo
+● Templyo
+● Watershed,
+atbp.
+
+PANGINGISDA
+● Pagtatayo ng mga daungan
+● Philippine Fisheries Code of 1998: Paglilimita ng pamahalaan at naglalayon ng wastong
+paggamit sa yamang pangisdaan.
+● Fishery Research:
+Isang programa ng pamahalaan na isinasagawa upang masiguro ang pagpaparami at pagpapayaman sa
+mga yamang-tubig
+PAGTOTROSO
+● Community Livelihood Assistance Program (CLASP): Paglilipat ng teknolohiya/pagtuturo sa
+mga mamamayan ng wastong paglinang sa mga likas na yaman.
+● National Integrated Protected Areas System (NIPAS): Maingatan at protektahan ang
+kagubatan
+● Sustainable Forest Management Strategy: Upang matakdaan ang permanente at sukat ng
+kagubatan
+LANDBANK OF THE PHILIPPINES
+● Upang magkaroon ng kaagapay ang mga magsasaka sa pagpapaunlad ng kanilang kabuhayan.
+SANGAY NG PAMAHALAAN NA TUMUTULONG SA SEKTOR NG AGRIKULTURA
+Department of Agriculture (DA): Gumagabay sa mga magsasaka ukol sa makabagong teknolohiya
+at wastong paraan ng pagtatanim.
+
+Bureau of Fisheries and Aquatic Resources (BFAR): Sinisikap na paunlarin ang larangan ng
+pangingisda.
+Bureau of Animal Industry (BAI): Nangangasiwa sa larangan ng paghahayupan.
+Ecosystem Research and Development Bureau (ERDB): Nagsasagawa ng pananaliksik sa
+ecosystem upang magbigay ng siyentipikong batayan sa pangangalaga ng kapaligiran at yamang
+gubat.</p>
+<div class="media">
+<img src="apl31.jpeg">
+<img src="apl32.jpeg">
+</div>
+</div>
+
+
+<div class="section">
+<h3>Lesson 4</h3>
+<p>INDUSTRIYA
+-Tumutukoy sa pagproseso ng mga hilaw na materyal at paggawa ng mga produkto na
+kinakailangan para sa pampublikong pamilihan
+-Naglalayong maiproseso ang mga hilaw na materyal upang makabuo ng produkto na ginagamit
+ng tao
+SUB SEKTOR NG INDUSTRIYA:
+1. Pagmimina (Mining)
+2. Pagmamanupaktura (Manufacturing)
+3. Konstruksyon (Construction)
+4. Utilities
+● Pagmimina
+○ Pagkuha at pagproseso ng mga yamang mineral (metal, di-metal, o enerhiya)
+upang gawing tapos na produkto o kabahagi ng isang yaring kalakal
+○ Ang mismong produkto, hilaw man o naproseso ay nagbibigay ng kita para sa
+bansa
+● Pagmamanupaktura
+○ Paggawa ng mga produkto sa pamamagitan ng manual labor o ng mga makina
+○ Nagkakaroon ng pisikal o kemikal na transpormasyon ang mga materyal o
+bahagi nito sa pagbuo ng mga bagong produkto
+● Konstruksyon
+○ Pagtatayo ng mga gusali, estruktura, at iba pang land improvements
+● Utilities
+○ Pagtugon ng mga pangunahing pangangailangan ng mga mamamayan tulad ng
+tubig, kuryente, at gas
+○ Paglalatag ng mga imprastraktura at angkop na teknolohiya upang maihatid ang
+serbisyo
+KAHALAGAHAN:
+● Pagbabagong teknolohikal
+● Pagbabagong pangkultura, panlipunan, at pansikolohikal
+
+KAHINAAN:
+● Policy Inconsistency - Kahinaan ng pamahalaan ng mga polisyang sususporta sa
+industriya.
+● Inadequate Investment - Pamumuhunan sa teknolohiya.
+● Macroeconomic Volatility and Political Instability - Kahinaan ng makroekonomiks at
+kaguluhan sa politika.
+KAHALAGAHAN SA PAMBANSANG KAUNLARAN:
+1. Tumatanggap ng mga produkto mula sa sektor ng agrikultura at ng serbisyo mula sa
+sektor ng paglilingkod
+2. Nagkakaloob ng hanapbuhay sa maraming Pilipino
+3. Nagpapasok ng dolyar sa bansa
+4. Nakagagamit ng makabagong Teknolohiya
+5. Gumagawa ng mga intermediate products (mga materyales o produkto na ginagamit sa
+paggawa ng iba pang produkto; hal. wheat - to make bread)
+PAGKAKAUGNAY NG AGRIKULTURA AT INDUSTRIYA:
+● Nagmumula sa agrikultura ang mga hilaw na sangkap na ginagamit sa pagbuo ng mga
+produkto ng industriya.
+● Ang mga ginagamit na traktora, sasakyang pangingisda, at iba pang produkto ay mula
+sa industriya na ginagamit ng mga magsasaka upang magkaroon ng mataas na
+produksyon na magbibigay ng malaking kita sa sektor ng agrikultura.
+● Ang dami ng lakas-paggawa sa mga mamimili ay nagpapakita ng lubos na
+pagtutulungan sa mga sector ng industriya at agrikultura.
+● Ang agrikultura ang pinagmumulan ng pagkain ng mga industriya na siyang tumutugon
+sa mga pagkaing kinakailangan ng mga tao.
+● Ang industriya ang nagbibigay ng malaking kontribusyon sa ekonomiya.
+● Ang mga sangkap ay nagkakaroon ng transpormasyon dahil sa mga lakas–paggawa na
+gumagawa upang madagdagan ang halaga nito at lalo pang gumanda.
+SULIRANIN NG INDUSTRIYA
+1. Pondo at kompetisyon
+2. Paghina ng lokal na industriya
+3. Demand
+MGA PATAKARANG PANG-EKONOMIYA:
+● Filipino First Policy:
+○ Nagsimula sa programang FIlipino Muna ni Pangulong Carlos P. Garcia
+○ Naglalayong bigyan ng higit na malaking partisipasyon ang mga Pilipino sa
+pagpapatakbo ng ekonomiya
+
+● Oil Deregulation Law (R.A. 8479):
+○ Nagbukas ng kompetisyon sa industriya ng langis
+○ Ang pamilihan ang nagdidikta sa presyo ng petrolyo, at hindi ito maaaring
+pakialaman ng gobyerno
+● Patakaran ng Microfinancing:
+○ Serbisyong pinansiyal na isinasagawa ng mga bangko na magpautang na
+mayroong mababang interes sa mahihirap na pamilya
+● Patakaran sa Online Business:
+○ Online shopping o retailing
+○ Online intermediary service
+○ Online advertisement o classified ads
+○ Online auction
+● Retail Nationalization Act of 1964 (R.A. 1180):
+○ Sampung taong palugit sa mga dayuhang capitalist
+○ Pilipino na may korporasyon o asosasyon lamang ang nasa kalakalang pagtitingi
+● Retail Trade Liberalization Act of 2000 (R.A. 8762)
+○ Nagpawalang-bisa sa RA 1180
+○ Binuksan ang kalakalang pagtitingi sa mga dayuhan
+● Build-Operate-Transfer (BOT) (R.A. 6957)
+○ Binibigyan ng karapatang bumuo ng mga pasilidad sa kanilang mga sariling
+pondo at palakarin ito sa humigit-kumulang na 25 taon
+● Asset Privatization Trust (APT)
+○ Itinatag upang mapangasiwaan ang pagbebenta ng mga korporasyong
+pagmamay-ari ng pamahalaan sa pribadong pagmamay-ari.
+○ Pinasimula ni Corazon Aquino
+INDUSTRIYALISASYON:
+● Kalagayan ng ekonomiya na nagpapakita ng kapasidad at kakayahan ng bansa na
+makalikha ng maraming produkto mula sa hilaw na materyal ng agrikultura na tutugunan
+sa pangangailangan ng lokal na pamilihan at pamilihan sa labas ng bansa.
+LAYUNIN:
+1. Malinang at mapaunlad ang pinagkukunang yaman ng bansa (Likas na yaman, yamang
+tao, at yamang kapital)
+2. Magbigay pagkakataon na maitaas ang antas ng kabuhayan ng mga mamamayan.
+3. Makatulong sa pagpapaunlad ng ekonomiya.
+KAHALAGAHAN:
+● Daan para mapaunlad ang bansa
+● Pagbabagong teknolohikal na sinasabayan ng mga pagbabagong pangkultura,
+panlipunan, at pansikolohikal.
+● Mas magaan ang gawain ng mga manggagawa.
+
+URI:
+1. COTTAGE INDUSTRY
+2. SMALL AND MEDIUM SCALE INDUSTRY
+3. LARGE SCALE INDUSTRY
+EPEKTO:
+● Mapataas ang produksyon ng sektor ng ekonomiya
+● Hindi pagkakapantay ng kalagayang pang ekonomiko
+● Paglaki ng polusyon
+● Pagbaba ng pagkakaisa sa komunidad dahil sa kompetisyon
+SANGAY NG PAMAHALAAN NA TUMUTULONG SA SEKTOR NG INDUSTRIYA
+Department of Trade and Industry (DTI):
+Tuwirang tumitingin at nangangalaga sa larangan ng industriya at pangangalakal.
+Board of Investments (BOI): Tinutulungan ang mga nagsisimulang industriya at humihikayat sa
+mga dayuhang mamumuhunan na magnegosyo sa bansa.
+Philippine Economic Zone Authority (PEZA): Tumutulong sa mga namumuhunan na maghanap
+ng lugar upang pagtayuan ng negosyo.
+Securities and Exchange Commission (SEC): Nagtatala at nagrerehistro sa mga kompanya sa
+bansa.</p>
+<div class="media">
+<img src="apl41.jpeg">
+<img src="apl42.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 5</h3>
+<p>SEKTOR NG PAGLILINGKOD
+-Ang umaalalay sa buong yugto ng produksyon, distribusyon, kalakalan, at pagkonsumo ng mga produkto
+sa loob o labas ng bansa.
+-Kilala rin ito bilang tersarya o ikatlong sektor ng ekonomiya matapos ang agrikultura at industriya.
+MGA SULIRANIN:
+-Unemployment
+-Brain Drain (Ang mga magagaling ay nasa abroad)
+-Job mismatch
+-Underemployment (Hindi nabibigyang oras sa trabaho, at hindi akma ang mga kasanayan/skills)
+SAKLAW NG HANDBOOK:
+-Ang handbook ay para sa mga manggagawa sa pribadong sektor. Nakapaloob dito ang mga minimum
+na benepisyong itinakda ng batas na dapat ibigay ng employer.
+Hindi saklaw ang:
+● Mga empleyado ng gobyerno
+● Managerial employees (sa ilang benepisyo gaya ng overtime at holiday pay)
+● Field personnel (depende sa kondisyon ng trabaho)
+
+● Transportasyon, komunikasyon, at mga
+imbakan
+○ Mga serbisyong pampublikong sasakyan, mga paglilingkod ng telepono at mga
+pinapaupahang bodega.
+● Kalakalan
+○ Pagpapalitan ng iba’t-ibang produkto at serbisyo.
+● Pananalapi
+○ Serbisyong may kinalaman sa bangko, insurance, at pamumuhunan.
+○ Nagbibigay ng tulong pinansyal gaya ng mga bangko, bahay-sanglaan, atbp.
+● Paupahang bahay at Real Estate
+○ Mga paupahan tulad ng mga apartment, mga developer ng subdivision, town house, at
+condominium.
+● Paglilingkod ng Pampribado
+○ Lahat ng mga paglilingkod na nagmumula sa pribadong sektor ay kabilang dito.
+● Paglilingkod ng Pampubliko
+○ Lahat ng paglilingkod na ipinagkakaloob ng pamahalaan.
+● Department of Labor and Employment
+(DOLE)
+○ Pangangalaga sa kapakanan ng mga manggagawang Pilipino, pagtataguyod ng maayos
+na oportunidad sa trabaho, at regulasyon ng mga patakaran sa paggawa sa bansa.
+● Overseas Workers Welfare Administration (OWWA)
+○ Tumitingin sa kapakanan ng mga Overseas Filipino Workers
+● Philippine Overseas Employment Administration (POEA)
+○ Isulong at paunlarin ang mga programa ukol sa paghahanapbuhay sa ibayong-dagat at
+pangalagaan ang kapakanan ng mga OFW.
+○ Itinatag sa bisa ng Executive Order 797 (1982)
+● Technical Education and Skills Development Authority (TESDA)
+○ Hikayatin ang buong partisipasyon ng industriya, paggawa, mga lokal na pamahalaan, at
+mga institusyong teknikal at bokasyonal upang sanayin at paunlarin ang kasanayan ng
+mga manggagawa sa bansa.
+○ Itinatag sa bisa ng R.A. 7796 (1994)
+● Professional Regulation Commission (PRC)
+○ Nangangasiwa at sumusubaybay sa gawain ng mga manggagawang propesyonal upang
+matiyak ang kahusayan sa paghahatid ng mga serbisyong propesyonal sa bansa.
+● Commission on Higher Education (CHED)
+○ Nangangasiwa sa gawain ng mga pamantasan at kolehiyo sa bansa upang maitaas ang
+kalidad ng edukasyon sa mataas na antas.
+● Artikulo 94 - Holiday Pay
+○ Tumutukoy sa bayad ng isang manggagawa na katumbas ng isang araw na sahod kahit
+hindi pumasok sa araw ng pista opisyal.
+○ May bayad kahit hindi pumasok kapag regular holiday, kung saklaw.
+Mga halimbawa ng regular holidays:
+○ New Year's Day (Jan 1)
+○ Independence Day (June 12)
+○ Christmas Day (Dec 25)
+Karaniwang rate:
+○ 100% ng sahod kung hindi pumasok (regular holiday)
+○ 200% kung pumasok sa regular holiday
+○ Mas mataas ang bayad kung holiday at rest day na nagkataon.
+● Republic Act 6727 - Wage Rationalization Act
+○ Nagsaad ng mga mandato para sa pagsasaayos ng pinakamababang pasahod o
+minimum wage
+○ Ang minimum wage ay itinatalaga ng mga Regional Tripartite Wages and Productivity
+Boards (RTWPBs) depende sa rehiyon. Dapat sundin ng employer ang umiiral na
+minimum wage sa kanilang rehiyon.
+● Artikulo 91-93 - Premium Pay
+○ Karagdagang bayad sa manggagawa sa loob ng walong oras na trabaho sa araw ng
+pahinga at special days
+● Artikulo 87 - Overtime Pay
+○ Karagdagang bayad sa pagtatrabaho na lampas sa 8 oras sa isang araw.
+○ Karaniwang rate: 125% ng regular wage.
+○ Mas mataas kung overtime sa holiday o rest
+● Artikulo 86 - Night Shift Differential
+○ Karagdagang bayad sa pagtatrabaho sa gabi na hindi bababa sa 10% ng kanyang
+regular na sahod sa bawat oras na ipinagtrabaho sa pagitan ng 10PM - 6AM.
+● Artikulo 96 - Service Charges
+○ Lahat ng manggagawa sa isang establishment na kumokolekta ng service charges ay
+may karapatan sa isang pantay o tamang bahagi sa 85% na kabuuang koleksiyon
+○ 100% ng nakolektang service charge ay dapat ipamahagi sa non-managerial employees
+sa establishments tulad ng hotel at restaurant.
+● Artikulo 95 - Service Incentive Leave
+○ Bawat manggagawa na naglilingkod nang hindi kukulangin sa isang taon ay dapat
+magkaroon ng karapatan sa taunang service incentive leave ng limang araw na may
+bayad
+○ 5 araw na bayad na leave kada taon.
+○ Para sa empleyadong may hindi bababa sa 1 taon na serbisyo.
+○ Maaaring i-convert sa cash kung hindi nagamit.
+● Republic Act 1161 - Maternity Leave
+○ Ang bawat nagdadalang-taong manggagawa na nagtratrabaho sa pribadong sektor,
+kasal man o hindi, ay makakatanggap ng maternity leave.
+○ Kasama ito sa benepisyong katumbas ng isang 100% na humigit kumulang na araw ng
+sahod ng manggagawa na nakapaloob sa batas
+Ayon sa Expanded Maternity Leave Law:
+○ 105 days paid maternity leave (live childbirth)
+○ May dagdag na 15 days para sa solo parent
+○ 60 days kung miscarriage o emergency termination
+● Republic Act 8972 - Paternity Leave para sa mga solong magulang
+○ Ipinagkaloob sa sinumang solong magulang o indibidwal na napag-iwanan ng
+responsibilidad ng pagiging magulang
+Sa ilalim ng Solo Parents' Welfare Act (naamyendahan ng RA 11861):
+○ 7 days na paid leave kada taon
+○ Para sa kwalipikadong solo parent
+● Republic Act 8187 - Paternity Leave
+○ Maaaring magamit ng empleyadong lalaki sa unang apat na araw mula nang manganak
+ang legal na asawa na kaniyang kapisan
+○ Pakikipagpisan: obligasyon ng asawang babae at asawang lalaki na magsama sa isang
+bubong
+Ayon sa Paternity Leave Act of 1996:
+○ 7 days na paid leave
+○ Para sa legal na asawa ng nanganak
+○ Hanggang sa unang 4 na panganganak
+● Presidential Decree 851 - Thirteenth Month Pay
+○ Nagbibigay sa mga empleyado nang hindi lalagpas ng ika-24 ng Disyembre bawat taon.
+○ Lahat ng rank-and-file employees ay may karapatan.
+○ Katumbas ng 1/12 ng kabuuang basic salary sa loob ng taon.
+● Presidential Decree 626 - Benepisyo sa Employees Compensation Program
+○ Isang compensation package sa mga manggagawa sa pampubliko at pambribadong
+sektor sakaling may kaganapang pagkakasakit na may kaugnayan sa trabaho
+● Republic Act 9262 - Leave for Victims of Violence Against Women and Children
+(VAWC)
+Ayon sa Anti-VAWC Act of 2004:
+○ 10 days na paid leave
+○ Para sa babaeng empleyadong biktima ng VAWC
+KAHALAGAHAN
+Tinitiyak na makakarating sa mga mamimili ang mga produkto mula sa mga sakahan o pagawaan.
+Nagbibigay ng trabaho sa mga mamamayan.
+Tinitiyak ang maayos na pag-iimbak, pagtitinda ng kalakal at iba pa..
+Nagpapataas ng GDP ng bansa.
+Nagpapasok ng dolyar sa bansa.
+
+● Papel ng Sektor ng Paglilingkod
+○ Nagkakaloob ng lakas-paggawa, kasanayan, kaalaman, at serbisyo para sa
+kaunlarang pang-ekonomiya
+● Karl Marx: ang mga manggagawa ang tunay na prodyuser ng bansa
+● Kontraktuwalisasyon: ang isang manggagawa ay nakatali sa kontrata na mayroon
+siyang trabaho sa loob ng 5 buwan lamang. kapag natapos na ang kontrata,
+kinakailangan niya nang umalis sa pinagtatrabahuhan
+● Brain Drain: pagkaubos ng mga manggagawa patungo sa ibang bansa
+● 8 oras ang regular working hours
+SSS Benefits
+● Sa ilalim ng Social Security System:
+● Sickness benefit
+● Maternity benefit
+● Disability benefit
+● Retirement benefit
+● Death at funeral benefit
+● Salary loan
+PhilHealth Benefits
+● Sa ilalim ng PhilHealth:
+● Inpatient at outpatient coverage
+● Case rate system para sa ospital
+● Universal Health Care coverage
+Pag-IBIG Fund Benefits
+● Sa ilalim ng Pag-IBIG Fund:
+● Housing loan
+● Multi-purpose loan
+● Calamity loan
+● Savings na may dividend
+Employees’ Compensation Program (ECP)
+● Pinangangasiwaan ng Employees' Compensation Commission:
+● Benepisyo para sa work-related sickness, injury, o death
+● Medical services
+● Disability at income benefit
+Mahalagang Paalala
+● Ang mga benepisyong ito ay minimum requirements lamang; maaaring magbigay ng
+mas mataas ang employer.</p>
+<div class="media">
+<img src="apl51.jpeg">
+<img src="apl52.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 6</h3>
+<p>
+IMPORMAL NA SEKTOR
+● Sektor ng ekonomiya na walang pormal o salat sa mga dokumentong kailangan sa pagsasagawa
+ng gawaing pang-ekonomiya
+● Ang kita ng sektor na ito ay HINDI naisasama sa kabuuang Gross Domestic Product (GDP) ng
+bansa
+● Paraan ng mamamayan upang magkaroon ng kabuhayan/dagdag kita sa tuwing panahon ng
+pangangailangan
+● Ito ay nagdudulot rin ng pagkakalikha ng mga produkto at serbisyong tutugon sa ating mga
+pangangailangan
+● Kilala rin sa tawag na Underground Economy
+HALIMBAWA NG MGA TAONG KABILANG SA SEKTOR NA ITO
+1. Nagtitinda sa kalsada
+2. Pedicab driver
+3. Karpintero
+4. Hindi rehistradong pampublikong sasakyan
+KATANGIAN NG IMPORMAL NA SEKTOR
+1. Hindi nakarehistro sa pamahalaan
+2. Hindi nagbabayad ng buwis mula sa kinita
+3. Walang legal at pormal na balangkas mula sa pamahalaan para sa pagnenegosyo
+IBA’T IBANG ANYO NG IMPORMAL
+NA SEKTOR
+● Mga gawaing maaaring isakatuparan lamang sa loob ng tahanan
+● Mga gawaing pansibiko, pagkakawanggawa, at panrelihiyon
+● Mga sari-sari stores, pagtitinda sa labas ng bahay o sidewalk, paglalako ng kalakal o serbisyo
+● Ilegal na gawain tulad ng pagnanakaw, pagbebenta ng ilegal na gamot, piracy, at prostitusyon
+KAHALAGAHAN NG IMPORMAL NA SEKTOR1. Sinasalo nito ang mga mamamayan na hindi makapasok bilang mga regular na empleyado sa
+isang kompanya.
+2. Nagbibigay ng pagkakataon sa maraming Pilipino na makapaghanapbuhay
+3. Nagsisilbing tagasalo ng mga mamamayang may mahigpit na pangangailangan
+4. Malaki ang naitutulong sa mga konsyumer ang mga kalakal at serbisyong mula sa impormal na
+sektor dahil sa MURA nitong halaga
+DAHILAN KUNG BAKIT PUMAPASOK SA IMPORMAL NA SEKTOR ANG MGA MAMAMAYAN
+● Makaligtas sa pagbabayad ng buwis sa pamahalaan
+● Makaiwas sa masyadong mahaba at masalimuot na proseso ng pakikipagtransaksyon sa
+pamahalaan (bureaucratic red tape)
+● Kawalan ng regulasyon mula sa pamahalaan na kung saan ang mga batas at programa ay
+hindi naitutupad nang maayos
+● Makapaghanapbuhay nang hindi nangangailangan ng malaking kapital o puhunan
+● Malabanan ang matinding kahirapan
+EPEKTO SA EKONOMIYA NG IMPORMAL NA SEKTOR
+1. Pagbaba ng halaga ng nalilikom na buwis
+2. Banta sa kapakanan ng mga mamimili
+3. Paglaganap ng mga ilegal na gawain
+MGA BATAS, PROGRAMA, AT PATAKARANG PANG-EKONOMIYA SA IMPORMAL NA SEKTOR
+Social Reform and Poverty Alleviation Act of
+1997 (R.A 8425)
+● Iahon sa kahirapan ang mga Pilipinong
+kabilang sa impormal na sektor
+● Upang maisakatuparan ang mga
+probisyon ng batas na ito ay itinatag
+ang National Anti-Poverty
+Commission
+Magna Carta of Women (R.A 9710)
+● Inaalis ang lahat ng uri ng diskriminasyon
+laban sa kababaihan
+Philippine Labor Code (P.D 442)
+● Pangunahing batas ng bansa para sa
+mga manggagawa na itinatag noong
+Mayo 1, 1974
+Technical Education and Skills Development
+Act of 1994 (R.A 7796)
+● Layuning palakasin ang pakikiisa ng iba't
+ibang sektor upang mapabuti ang
+kasanayan at kalidad ng yamang tao sa
+bansa
+Social Security Act of 1997 (R.A 8282)
+● Nagtatakda ng tungkulin ng estado na
+paunlarin at pangalagaan ang seguridad
+National Health Insurance Act of 1995 (R.A
+7875)
+● Nagtatag ng Philippine Healthat kagalingang panlipunan ng mga
+manggagawa
+Insurance Corporation (PhilHealth)
+upang matiyak na may maayos at
+sistematikong kaseguruhang
+pangkalusugan ang lahat ng Pilipino
+MGA PROGRAMA PARA SA MAMAMAYAN
+Dole Integrated Livelihood Program (DILP)
+● Nagbibigay ng pagsasanay at tulong
+pangkabuhayan para sa sariling
+hanapbuhay
+Self-Employment Assistance Kaunlaran
+Program (SEA-K)
+● Tumutulong sa mahihirap na pamilya sa
+pagsasanay at pagsisimula ng negosyo
+Integrated Services for Livelihood
+Advancement of the Fisherfolks (ISLA)
+● Nagbibigay ng suporta sa pamamagitan
+ng pagsasanay at pagkakaloob ng
+kagamitan upang mapaunlad ang
+kanilang hanapbuhay
+Cash-For-Work Program (CWP)
+● Pansamantalang kita para sa nasalanta,
+kapalit ng trabahong pang-rehabilitasyon
+Pantawid Pamilyang Pilipino Program (4Ps)
+● Tulong-pinansyal sa pinakamahihirap na
+Pilipino kapalit ng pagsunod sa mga
+kondisyong pangkalusugan at
+pang-edukasyon ng kanilang mga anak</p>
+<div class="media">
+<img src="apl61.jpeg">
+<img src="apl62.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h3>Lesson 7</h3>
+<p>KALAKALANG PANLABAS
+● Palitan ng produkto at serbisyo sa pagitan ng mga bansa
+● Ito ay nagaganap sapagkat walang bansa ang maaaring makatugon sa lahat ng
+kanyang pangangailangan ng walang tulong mula sa ibang bansa.
+● Bilateral: 2 bansa (hal. U.S at PH)
+● Bloc: Pagpalitan ng isang organisasyon at 1 bansa o 1 organization at isa pang
+organization (hal. APEC at PH)
+● EKSPORT (Pagluluwas): pagpapadala ng mga produkto at serbisyo sa ibang bansa
+● IMPORT (Pag-aangkat): pagbili ng kalakal mula sa ibang bansa
+DAHILAN NG KALAKALANG PANLABAS
+1. Pagkakaiba ng Teknolohiya
+2. Pagkakaiba sa Pinagkukunang Yaman
+3. Pagkakaiba sa Panlasa
+4. Pagkakaiba sa Halaga ng Produksyon
+PATAKARANG UMAAPEKTO SA KALAKALANG PANLABAS
+Taripa/Tariff:
+● Buwis sa mga produktong inaangkat
+● Nagpapataas ng presyo at nagpapababa ng benta ng inaangkat ng produkto
+● Nagpapataw ng mataas na taripa pang mapigil ang pagpasok ng dayuhang produktong
+kalaban ng lokal na produkto
+● Ipinapataw upang makalikom ng karagdagang pondo
+Kota: (Quota)
+● Maaaring limitahan (kotahan) ang pagpasok ng mga kalabang produkto
+Subsidy:
+● Tulong na ibinibigay ng gobyerno upang bumaba ang halaga ng produksyon ng mga
+lokal na produkto.
+BATAYAN NG KALAKALANG PANLABAS (David Ricardo)
+Absolute Advantage
+● Nakakalikha ng mas maraming bilang
+ng produkto gamit ang mas kaunting
+salik ng produksyon kumpara sa
+ibang bansa.
+Comparative Advantage
+● Ang bansa ay magkakaroon ng
+espesyalisasyon sa paglikha ng
+kalakal.
+● Kapag kaya ng bansa gawin ang
+kalakal ng mas efficient kumpara sa
+ibang bansa.
+● Hal. Cebu may comparative
+advantage sa pagluto ng Lechon
+BALANCE OF TRADE (BOT)
+● Kalagayan ng kabayaran ng pagluluwas (export) at sa pag-aangkat (import).
+● Trade Deficit: import > export
+● Trade Surplus: import < export
+KABUTIHAN NG PAKIKIPAGKALAKALAN
+● Mas maraming produkto ang mapagpipilian sa pamilihan.
+● Napapataas nito ang kalidad ng mga produkto na nabibili sa pamilihan
+● Nagkakaroon ng pagkakaunawaan ang mamamayan ng bansang nakikipagkalakalan.
+● Lumalawak ang pamilihan ng mga produkto sa bansa.
+DI- KABUTIHAN NG PAKIKIPAGKALAKALAN
+● Nagiging palaasa ang mga mamamayan sa produktong imported
+● Hindi nalilinang ang pagkamalikhain ng mga mamamayan dahil umaasa na lamang sila
+sa mga produktong gawa sa ibang bansa
+● Pagkawala ng sariling pagkakakilanlan bunga ng pagpasok ng dayuhang kultura sa
+lipunan
+SAMAHANG PANDAIGDIGANG PANG-EKONOMIKO
+World Trade Organization
+● Pinasinayaan at nabuo noong Enero 1, 1995
+● Samahang namamahala sa pandaigdigang patakaran ng sistema ng kalakalan o
+global trading system sa pagitan ng mga kasaping estado o member states
+LAYUNIN
+● Pagsusulong ng maayos na kalakalan sa pamamagitan ng pagpapababa ng hadlang
+sa kalakalan (trade barriers)
+● Plataporma para sa negosasyon at tulong-teknikal sa developing countries.
+● Paggamit ng trade sanction sa mga kasaping hindi sumusunod sa desisyon ng
+samahan
+Asia-Pacific Economic Council (APEC)
+● Isulong ang kaunlarang pang-ekonomiya at katiwasayan sa rehiyong Asia-Pacific
+● Itinatag noong Nobyembre 1989
+LAYUNIN
+● Liberalisasyon ng pakikipagkalakalan at pamumuhunan
+● Pagpapabilis at pagpapadali ng pagnenegosyo
+● Pagtutulungang pang-ekonomiya at teknikal
+Association of Southeast Asian Nations (ASEAN)
+● Paunlarin at isulong ang malayang kalakalan sa bawat kasapi ng ASEAN pati ang
+mga bansang dialogue partner nito.
+● Itinatag noong August 8, 1967
+LAYUNIN
+● Upang maging ganap ito, nabuo ang ASEAN Free Trade Area (AFTA) noong January
+28, 1992, sa Singapore.
+● Nakabatay sa Common Effective Preferential Tariff (CEPT) na nag-aalis ng taripa at
+quota para sa mas malayang daloy ng produkto sa ASEAN.
+GLOBALISASYON
+● Proseso ng mabilisang pagdaloy nga mga tao, bagay, impormasyon, produkto sa iba’t
+ibang bansa.
+MULTINATIONAL COMPANIES
+- Namumuhunang kompanya sa ibang bansa ngunit ang produkto ay hindi nakabatay
+sa pangangailangan
+TRANSNATIONAL COMPANIES
+- Namumuhunang kompanya sa ibang bansa ngunit ang produkto ay nakabatay sa
+pangangailangan
+- Kailangan
+OUTSOURCING
+● Pagkuha ng kompanya ng serbisyo mula sa isang kompanya na may kaukulang
+bayad
+● Mapagaan ang gawain ng isang kompanya upang mapagtuunan nila ng pansin ang sa
+palagay nila ay higit na mahalaga
+URI:
+OFFSHORING
+- Pagkuha ng serbisyo ng kompanya sa ibang bansa na naniningil ng mas mababang
+bayad
+NEARSHORING
+- Paglilipat ng mga operasyon o serbisyo ng negosyo sa isang kalapit na bansa
+- lokasyon ay malapit (kadalasan sa parehong time zone o rehiyon) upang mas mabilis
+ang komunikasyon, magkatulad ang kultura, at mas mababa ang gastos
+ON-SHORING
+- Domestic Outsourcing (sa loob ng bansa)
+- Bunga ng mababang gastusin sa operasyon
+Liberalisasyon: pagtanggal ng kota at taripa sa pakikipagkalakalan.
+Deregulasyon: pagtanggal ng pakikialam ng pamahalaan sa panlabas na kalakalan.
+Dolyar: common currency sa pandaigdigang kalakalan.
+Pribatisasyon: pagbebenta ng pag-aari ng gobyerno sa mga pribadong kompanya.
+Balance of Payment: pandaigdigang batayan o sukatan para sa mga gawaing pang-
+ekonomiya.
+Dumping: pagdagsa ng mga sobrang kalakal ng isang mas malakas na bansa tungo sa mas
+mahinang bansa.
+Kota/Quota: ang takdang dami ng mga produkto na maaaring iluwas sa isang bansa.
+Balance of Payment: talaang nagpapakita ng transaksyon ng isang bansa sa iba't ibang
+bahagi ng mundo.
+You sent
+</p>
+<div class="media">
+<img src="apl71.jpeg">
+<img src="apl72.jpeg">
+</div>
+</div>
+
+
+<div class="page-footer">
+<button onclick="showPage('ap')">⬅ Back</button>
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<script>
+
+/* PAGE NAVIGATION */
+
+function showPage(id){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"))
+document.getElementById(id).classList.add("active")
+window.scrollTo({top:0,behavior:"smooth"})
+}
+
+/* IMAGE ZOOM */
+
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
+
+document.addEventListener("click",e=>{
+if(e.target.tagName==="IMG"){
+lightbox.style.display="flex"
+lightboxImg.src=e.target.src
+}
+})
+
+lightbox.onclick=()=>lightbox.style.display="none"
+
+</script>
+
+</body>
+</html>
